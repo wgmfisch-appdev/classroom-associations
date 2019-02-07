@@ -8,8 +8,7 @@ end
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails"
 gem "rails", "~> 5.1.2"
-# Use sqlite3 as the database for Active Record
-gem "sqlite3"
+
 # Use Puma as the app server
 gem "puma", "~> 3.7"
 # Use SCSS for stylesheets
@@ -52,10 +51,11 @@ group :development, :test do
   gem "binding_of_caller"
   gem "console_ip_whitelist", github: "firstdraft/console_ip_whitelist"
   gem "dotenv-rails"
-  gem "draft_log", github: "firstdraft/draft_log"
   gem "draft_generators", github: "firstdraft/draft_generators"
-  gem "pry-rails"
+  gem "draft_log", github: "firstdraft/draft_log"
   gem "grade_runner", github: "firstdraft/grade_runner"
+  gem "pry-rails"
+  gem "sqlite3"
   gem "web_git", github: "firstdraft/web_git"
 end
 
@@ -77,3 +77,8 @@ end
 gem "activeadmin"
 gem "devise"
 gem "faker", github: "stympy/faker"
+
+group :production do
+  gem "pg"
+  gem "rails_12factor"
+end

@@ -1,5 +1,7 @@
 {
   "name": "classroom",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "diff2html-cli": "^2.6.0"
+  }
 }
