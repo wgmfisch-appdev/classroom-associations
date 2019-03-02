@@ -9,4 +9,5 @@
 #
 
 class Department < ApplicationRecord
+  
 end

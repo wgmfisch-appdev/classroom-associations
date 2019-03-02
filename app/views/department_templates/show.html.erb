@@ -15,6 +15,20 @@
   <dd>
     <%= @department.name %>
   </dd>
+  <dt>
+    Number of Courses
+  </dt>
+  <dd>
+    <%= Course.where(department_id: @department.id).count %>
+  </dd>
+  <dt>
+    Courses in this Department
+  </dt>
+  <% Course.where(department_id: @department.id).each do |course| %>
+    <dd>
+      <%= course.title %>
+    </dd>
+  <% end %>
 </dl>
 
 <a href="/delete_department/<%= @department.id %>">

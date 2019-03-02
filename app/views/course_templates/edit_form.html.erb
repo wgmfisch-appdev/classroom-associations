@@ -23,12 +23,12 @@
     <input type="text" id="title" name="title" class="form-control" value="<%= @course.title %>">
   </div>
   <div class="form-group">
-    <label for="department">
-      Title
+    <label for="department_id">
+      Department
     </label>
 
-    <!--<input type="text" id="department" name="department_id" class="form-control" value="<%= Department.find(@course.department_id).name %>">-->
     <%= select_tag("department_id", options_from_collection_for_select(Department.all, :id, :name, @course.try(:department_id)), :class => "form-control") %>
+    or <a href="/departments/new">Add a New Department</a> first
   </div>
 
   <button class="btn btn-block btn-outline-secondary">
